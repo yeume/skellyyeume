@@ -1,0 +1,96 @@
+{
+    "manufacturer": "yeume",
+    "keyboard_name": "skellyyeume",
+    "maintainer": "yeume",
+    "bootloader": "caterina", # Depending on the type of microcontroller we use, there are 
+                            # different bootloaders. Caterina is just one specific for our board. 
+                            # This field also determines which bootloader tag when we flash the firmware
+                            # ex. qmk flash -bl avrdude.... where "-bl" signifies bootloader and "avrdude"
+                            # is specific for caterina bootloader option.
+    "diode_direction": "COL2ROW",
+                            # you can google COL2ROW vs ROW2COL, as diode determines the direction of current flow
+                            # in our keyboard matrix. COL2ROW indicates that the diode's black line (cathode) points to
+                            # the row wire.
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+        "cols": ["B5", "B4", "E6", "D7", "C6"], #pins used on our microcontroller for columns
+        "rows": ["B1", "B2", "B3", "B6"]  #pins used on our microcontroller for rows
+                                        # NOTE: the order in which these pins are listed matters
+    },
+    "processor": "atmega32u4",
+    "url": "",
+    "usb": {
+        "vid": "0x444D", # this and below line are used in usevia.app to determine the keyboard matrix layout to display
+        "pid": "0x3536",
+        "device_version": "0.0.3"
+    },
+    "split": {
+        "soft_serial_pin": "D0", # this line indicates which pin on the microcontroller is used for data transport between the halves of the keyboard
+        "transport": {
+            "sync": {
+                "matrix_state": true
+            }
+        }
+    },
+    "layouts": {
+        "LAYOUT_split_3x5_3": {
+            "layout": [ 
+                #note, each line indicates [row, column], so visually it'd be like
+                # [0,0] [0,1] [0,2] [0,3] [0,4] ---------- [4,0] [4,1] [4,2] [4,3] [4,4]
+                # [1,0] [1,1] [1,2] [1,3] [1,4] ---------- [5,0] [5,1] [5,2] [5,3] [5,4]
+                # [2,0] [2,1] [2,2] [2,3] [2,4] ---------- [6,0] [6,1] [6,2] [6,3] [6,4]
+                            # [3,0] [3,1] [3,2] ---------- [7,0] [7,1] [7,2]
+                {"matrix": [0, 0], "x": 0, "y": 0},
+                {"matrix": [0, 1], "x": 1, "y": 0},
+                {"matrix": [0, 2], "x": 2, "y": 0},
+                {"matrix": [0, 3], "x": 3, "y": 0},
+                {"matrix": [0, 4], "x": 4, "y": 0},
+
+                {"matrix": [4, 0], "x": 10, "y": 0},
+                {"matrix": [4, 1], "x": 11, "y": 0},
+                {"matrix": [4, 2], "x": 12, "y": 0},
+                {"matrix": [4, 3], "x": 13, "y": 0},
+                {"matrix": [4, 4], "x": 14, "y": 0},
+
+                {"matrix": [1, 0], "x": 0, "y": 1},
+                {"matrix": [1, 1], "x": 1, "y": 1},
+                {"matrix": [1, 2], "x": 2, "y": 1},
+                {"matrix": [1, 3], "x": 3, "y": 1},
+                {"matrix": [1, 4], "x": 4, "y": 1},
+
+                {"matrix": [5, 0], "x": 10, "y": 1},
+                {"matrix": [5, 1], "x": 11, "y": 1},
+                {"matrix": [5, 2], "x": 12, "y": 1},
+                {"matrix": [5, 3], "x": 13, "y": 1},
+                {"matrix": [5, 4], "x": 14, "y": 1},
+
+                {"matrix": [2, 0], "x": 0, "y": 2},
+                {"matrix": [2, 1], "x": 1, "y": 2},
+                {"matrix": [2, 2], "x": 2, "y": 2},
+                {"matrix": [2, 3], "x": 3, "y": 2},
+                {"matrix": [2, 4], "x": 4, "y": 2},
+
+                {"matrix": [6, 0], "x": 10, "y": 2},
+                {"matrix": [6, 1], "x": 11, "y": 2},
+                {"matrix": [6, 2], "x": 12, "y": 2},
+                {"matrix": [6, 3], "x": 13, "y": 2},
+                {"matrix": [6, 4], "x": 14, "y": 2},
+
+                {"matrix": [3, 2], "x": 2, "y": 3},
+                {"matrix": [3, 3], "x": 3, "y": 3},
+                {"matrix": [3, 4], "x": 4, "y": 3},
+
+                {"matrix": [7, 0], "x": 10, "y": 3},
+                {"matrix": [7, 1], "x": 11, "y": 3},
+                {"matrix": [7, 2], "x": 12, "y": 3}
+            ]
+        }
+    }
+}
