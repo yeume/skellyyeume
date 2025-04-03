@@ -194,7 +194,7 @@ The following is the exact wiring diagram based on my board. Please pay close at
 ![alt text](pictures/switchesOnly1.png)
 ![alt text](pictures/switchesOnly2.png)
 </collapse></details>
-2. Prepare 24 sleeved wires cut up to roughly 3~4 inches in length. Each end of the wire must be degloved (1/8~1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).
+2. Prepare 24 sleeved wires cut up to roughly 3 ~ 4 inches in length. Each end of the wire must be degloved (1/8 ~ 1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).
 3. I soldered the columns first since they're the easiest, then the diodes (please refer to pro tip on getting the diode on the switch pin below under "callouts" section), and then finally the rows. **NOTE** The direction of the diode is **EXTREMELY** important here. In the firmware creation step above, we specified `COL2ROW` in our keyboard.json, this means that our cathode (black line) is oriented toward the row wire. <details><collapse>
 ![alt text](pictures/wireWithoutMCU.png)
 </collapse></details>
