@@ -224,8 +224,10 @@ You can curl the end of the diode without the black line, snip the extra wire pa
 <br>&nbsp;&nbsp; - check the VCC pins on both microcontrollers to make sure that the solder or the wire hasn't come off or something. There is a chance that you have a bad TRRS jack (hopefully not), but if you do, you'll need a voltmeter to test for continuity on each of the TRRS jack pins.
 - both halves turn on, but the right side keypress isn't being registered
 <br>&nbsp;&nbsp; - make sure you haven't modified [keyboard.json](firmware/skellyyeume/skellyyeume/keyboard.json) or [config.h](firmware/skellyyeume/skellyyeume/config.h) and that the correct pins (`D0` is what we've specified to in our firmware file) are soldered (on both the microcontroller and TRRS jack) as per the wiring diagrams above.
-- both halves turn on, the keys registered, but they're flipped (pressing where A would normally be registers G)
+- both halves turn on, the keystrokes register, but they're flipped (pressing where A would normally be registers G)
 <br>&nbsp;&nbsp; - check the wiring diagram to make sure your columns are wired up correctly. If you're facing an issue where pressing Q registers Z or something, check your rows.
+- both halves turn on, the keystrokes register, but there are multiple being registered at once (ex. pressing J hits both J and space bar)
+<br>&nbsp;&nbsp; - check that no bare wires are touching each other around the switch in question and also on the microcontroller.
 
 <div id='todo'>
 
