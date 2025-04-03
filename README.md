@@ -13,7 +13,9 @@ https://github.com/Bastardkb/Skeletyl/tree/main?tab=readme-ov-file
 6. [What are all these files in the firmware folder?](#whatthehell)
 7. [Getting the firmware onto the microcontroller](#buildfirmware)
 8. [Wiring up the board](#wiring)
-9. [Future...](#todo)
+9. [Okay I wired everything, but it doesn't work...](#debug)
+10. [Future...](#todo)
+
 
 
 <br>
@@ -194,12 +196,13 @@ The following is the exact wiring diagram based on my board. Please pay close at
 ![alt text](pictures/switchesOnly1.png)
 ![alt text](pictures/switchesOnly2.png)
 </collapse></details>
-2. Prepare 24 sleeved wires cut up to roughly 3 ~ 4 inches in length. Each end of the wire must be degloved (1/8 ~ 1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).
+2. Prepare 24 sleeved wires cut up to roughly 3 - 4 inches in length. Each end of the wire must be degloved (1/8 - 1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).
 3. I soldered the columns first since they're the easiest, then the diodes (please refer to pro tip on getting the diode on the switch pin below under "callouts" section), and then finally the rows. **NOTE** The direction of the diode is **EXTREMELY** important here. In the firmware creation step above, we specified `COL2ROW` in our keyboard.json, this means that our cathode (black line) is oriented toward the row wire. <details><collapse>
 ![alt text](pictures/wireWithoutMCU.png)
 </collapse></details>
 4. Do the same for the other half of the keyboard.
 5. Now for the messy part, using the sleeved wire bits from earlier, solder each pin to the corresponding column/row as specified in the wire diagram above. In addition, connect the TRRS jack wires as well.
+6. If everything has been wired correctly, you can connect the halves first using the TRRS cable and then connect the left half keyboard to the computer.
 
 ## Few callouts:
 - Inevitably, there will be parts of the row wire where it will touch the column wire. In order to prevent shorting out the connection, you must wrap a non-conductive material (ex. shrink tubing or electrical tape) on the contact points. Refer to the images above for reference.
@@ -211,6 +214,18 @@ You can curl the end of the diode without the black line, snip the extra wire pa
 ![alt text](pictures/diode2.png)
 ![alt text](pictures/diode3.png)
 </collapse></details>
+
+<div id='debug'>
+
+# Okay I wired everything, but it doesn't work...
+- the left half of the keyboard won't turn on
+<br>&nbsp;&nbsp; - is the USB plugged in all the way? Try a different port on the computer? Try to connect to a different machine?
+- the left half of the keyboard turns on, but the right half won't
+<br>&nbsp;&nbsp; - check the VCC pins on both microcontrollers to make sure that the solder or the wire hasn't come off or something. There is a chance that you have a bad TRRS jack (hopefully not), but if you do, you'll need a voltmeter to test for continuity on each of the TRRS jack pins.
+- both halves turn on, but the right side keypress isn't being registered
+<br>&nbsp;&nbsp; - make sure you haven't modified [keyboard.json](firmware/skellyyeume/skellyyeume/keyboard.json) or [config.h](firmware/skellyyeume/skellyyeume/config.h) and that the correct pins (`D0` is what we've specified to in our firmware file) are soldered (on both the microcontroller and TRRS jack) as per the wiring diagrams above.
+- both halves turn on, the keys registered, but they're flipped (pressing where A would normally be registers G)
+<br>&nbsp;&nbsp; - check the wiring diagram to make sure your columns are wired up correctly. If you're facing an issue where pressing Q registers Z or something, check your rows.
 
 <div id='todo'>
 
