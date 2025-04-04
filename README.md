@@ -13,6 +13,7 @@ https://github.com/Bastardkb/Skeletyl/tree/main?tab=readme-ov-file
 6. [What are all these files in the firmware folder?](#whatthehell)
 7. [Getting the firmware onto the microcontroller](#buildfirmware)
 8. [Wiring up the board](#wiring)
+8. [Assembling the case](#finalassembly)
 9. [Okay I wired everything, but it doesn't work...](#debug)
 10. [Future...](#todo)
 
