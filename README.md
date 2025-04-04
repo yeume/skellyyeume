@@ -100,6 +100,8 @@ if you have a 3d printer, feel free to use the files
 - [[OPTIONAL] 16 gauge copper wire](https://www.amazon.com/dp/B000BP7WH8?ref=ppx_yo2ov_dt_b_fed_asin_title) - This is to provide a cleaner way to wire up the columns/rows, but it can be done without.
 - [22AWG wire](https://www.amazon.com/dp/B00QTCBZ4I?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - [1N4148 diodes](https://www.amazon.com/BOJACK-Switching-IN4148-Electronic-Silicon/dp/B07Q4F3Y5W?dib=eyJ2IjoiMSJ9.sedX-2SqjP9L7wpQjWYA0GaXV-QkbK_pbWm0WxlQYFl6z3hBYiCDgVeEmaTSB3LY4hOifq8OnAfbkj4lxYFp6CcR7OBceK-xOqktDNobKpaGUl5ZwAfWq0mCjzSvKFdnwZIdhk8OMA1rYsVNIdQJdPEhERnFVR2pOgfj66s7_3CdUeJaQ3o65ilHOWPbDFyA6PIVWuhqhip31hUat-ydiInizcFJcPpuH9p2H4v3pE5jPWASyGNkSRb7sfomdxElENGJQnGwggEr1OTFpMjHGauLn-27fHZUZA9iLlGV1Yw.iYwXa-htPiFfMM3-LXdCHRdh3RPWTrGMe7ryVcWULas&dib_tag=se&keywords=1n4148+diode&qid=1743657530&s=automotive&sr=1-3)
+- [M4 screw insert](https://www.amazon.com/Threaded-Inserts-Plastic-Assortment-Printing/dp/B0DFGRCD33/ref=sr_1_11?dib=eyJ2IjoiMSJ9.dZ-PHeeNCVwdzdTnO8qOTMeoyDhprxUXyopfthqPqwVck_NJj03tIwBQxMojp9PozjbrDli4OzGwazUfq5uO9AoKGVr8waZFb0SkE3rZRImCYeDaijoUyLwYNuB5m-8FT-z5eSRJsWbbIvJWIcqnr5gPzyxVqLooptUtXSjRpFDA0KqFuS7ycv5BPXbievOJ5ESovst3q_h7v16oi_a4DyK0szUC40zsmfn3HhRyiCw._MLi5pclRk8ASqGV0HuqfxbC6728K9UpD0BvPJ6iQr4&dib_tag=se&keywords=m4+screw+insert&qid=1743736529&sr=8-11)
+- [M4 flathead screw](https://www.amazon.com/HanTof-Countersunk-Machine-Wrenches-Threaded/dp/B0B9HXP7DJ?crid=3FB8JN2L1FJIR&dib=eyJ2IjoiMSJ9.GmcBASHA3l-N5_qT5q1mx16k9V4zKtBhkUWMSjlVtIXf4AmFfCZ_PoSO3gxJpMdtSzsJFpMcBa2lI46pQWozbfMG_Zwwgm6Ox-4KavdX8onXrXlq_hvKo1MksYTseyuR2Y-Qkvqc6z0oV_bh-Ii7_XwQg9T5OZFmGu6ihLM8K2TkU2h54eBcaDVQqnDeyUjoAF-PLn0EXcx24a_q-cQgx3sY7SAn43787NFA4CxTc2w.fccNKgGLP7QKGmdFbDf2FAPk2AXvl5Woau3ZyEfCItQ&dib_tag=se&keywords=m4%2Bflathead%2Bscrew&qid=1743736601&sprefix=m4%2Bflathead%2Bscrew%2Caps%2C147&sr=8-3&th=1)
 - [solder iron](https://www.amazon.com/dp/B06XZ31W3M?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_5&th=1)
 - [solder wire](https://www.amazon.com/dp/B01M071WEE?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - [glue gun](https://www.amazon.com/Krightlink-Sticks-School-Crafts-Repairs/dp/B0BC878ZRG?dib=eyJ2IjoiMSJ9.rmkAqlNRv8pqMmb3ec-MNIcZ4qYWbCLkmF5lOBnTC-HAPj7n46O2V2tLV-vKhciBogzJgJpRIsv84L5OkF8YjoJ0HyRO3NtFR9OYYBanuuB-LQXVbrBiX_reJxbL8KfhT6vHG4kInrd4127DaPn-t2ohqrNR_aQym0O2RtZEysEkyW2lJrY0g6aNUVabdtGEaEnyNXzshyFv_zPI6PGFV6jF1v8CADZFMhy1cOxaS4KTal_IjPqOCQhAgUxXQCTEIHewi5u6t5ZGyZ0r_yupV9SWv1lPNzQHvmlztWWJxZ8.KxsKpr_op73ubOFDrDzO6KwYIp-oIp8mn7Gzpfst2dA&dib_tag=se&keywords=glue%2Bgun&qid=1743659006&sr=8-6&th=1)
@@ -196,13 +198,15 @@ The following is the exact wiring diagram based on my board. Please pay close at
 ![alt text](pictures/switchesOnly1.png)
 ![alt text](pictures/switchesOnly2.png)
 </collapse></details>
-2. Prepare 24 sleeved wires cut up to roughly 3 - 4 inches in length. Each end of the wire must be degloved (1/8 - 1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).
+2. Prepare 24 sleeved wires cut up to roughly 3 - 4 inches in length. Each end of the wire must be degloved (1/8 - 1/4 inch) so that they can be soldered. In addition, prepare the copper wires for the row/columns accordingly (if you're using them).<br>
+&nbsp;&nbsp; * If you end up using copper wires, try your best to make it as flush as possible with the case so that they don't get in the way when you have to put in the M4 screw inserts into the case later. *
 3. I soldered the columns first since they're the easiest, then the diodes (please refer to pro tip on getting the diode on the switch pin below under "callouts" section), and then finally the rows. **NOTE** The direction of the diode is **EXTREMELY** important here. In the firmware creation step above, we specified `COL2ROW` in our keyboard.json, this means that our cathode (black line) is oriented toward the row wire. <details><collapse>
 ![alt text](pictures/wireWithoutMCU.png)
 </collapse></details>
 4. Do the same for the other half of the keyboard.
 5. Now for the messy part, using the sleeved wire bits from earlier, solder each pin to the corresponding column/row as specified in the wire diagram above. In addition, connect the TRRS jack wires as well.
 6. If everything has been wired correctly, you can connect the halves first using the TRRS cable and then connect the left half keyboard to the computer.
+
 
 ## Few callouts:
 - Inevitably, there will be parts of the row wire where it will touch the column wire. In order to prevent shorting out the connection, you must wrap a non-conductive material (ex. shrink tubing or electrical tape) on the contact points. Refer to the images above for reference.
@@ -214,6 +218,20 @@ You can curl the end of the diode without the black line, snip the extra wire pa
 ![alt text](pictures/diode2.png)
 ![alt text](pictures/diode3.png)
 </collapse></details>
+
+<div id='finalassembly'>
+
+# Assembling the case 
+1. Heat up your solder iron, and grab the M4 screw inserts and place them gently in the 4 holes in each half of the board (marked in blue in the picture below). Note, the unused 2 holes on the case are for the ["splinktegrated"](https://github.com/Bastardkb/Splinktegrated) which I have opted out of for this build.<details><collapse>
+![alt text](pictures/insertSeated.jpg)
+![alt text](pictures/sunk3.jpg)
+</collapse></details>
+2. With the solder iron, firmly but gently press down on the insert slowly (be careful not to press too hard or it could damage the case) until it is seated flush with the case. As you can  see, the insert is a bit longer than the mounting hole in the case, but it's still doable. <details><collapse>
+![alt text](pictures/sunk1.jpg)
+![alt text](pictures/sunk2.jpg)
+</collapse></details>
+3. Once finished it should look something like 
+![alt text](pictures/assembled.jpg)
 
 <div id='debug'>
 
