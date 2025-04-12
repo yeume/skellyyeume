@@ -1,0 +1,5 @@
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+SERIAL_DRIVER = bitbang
+SPLIT_KEYBOARD = yes
+EXTRAFLAGS += -flto

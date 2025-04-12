@@ -56,7 +56,9 @@ ___
 # Disclaimer: 
 - You do not need any prior programming background, but it helps.
 - This guide assumes you have some experience with soldering.
-- keymapping this keyboard currently only works through modifying the [keymap.c](firmware/skellyyeume/keymaps/default/keymap.c) file in the firmware folder (please use the default keymap folder for now). The via keymapper doesn't work properly (mainly because via thinks this keyboard is a dactyl manuform, which it is not. Basically there are vid (vendor id)/pid (product id) fields in keyboard.json which via looks up to determine what keyboard it is when we load the keyboard on the via website. I just borrowed one from dactyl at the time...)
+- keymapping in vial is ready! check the firmware folder. 
+- The default bootmagic button for putting your microcontroller in DFU mode after the first successful flash is 0,0 on each half (your Q key for the left half and Y key for the right half -- you simply need to hold the button down while connecting the half of the keyboard via usb)
+- The vial secure unlock buttons are 0,0 and 0,1 (Q and W key on the keyboard)
 
 <br>
 
@@ -143,36 +145,53 @@ ___
 # Getting the firmware onto the microcontroller
 
 1. Open QMK MSYS, and input `qmk setup`. This process will take some time depending on your internet connection. It basically prepares your machine with necessary tools to start building your firmware, and clones the [qmk_firmware github repo](https://github.com/qmk/qmk_firmware) on to your machine.
-2. Once the setup has finished, you can copy the folder `skellyyeume` under `firmware` of this repo, and paste it under `/keyboards/handwired` of the `qmk_firmware` folder (so it would look like `/keyboards/handwired/skellyyeume`)
-3. Modify `keymap.c` (under the **default** folder) to your desired layout in VS Code. [Useful Links](#usefullinks) for selecting your keycodes.
-4. Head back to QMK MSYS, and type the following
+2. Once the setup has finished, copy the [hex file](firmware/handwired_skellyyeume_vial.hex) from the firmware folder to the root of the `qmk_firmware` folder.
+3. Type the following in QMK MSYS
 ```
 cd qmk_firmware
 ```
 
 ```
-qmk compile -kb handwired/skellyyeume -km default
+qmk flash -bl avrdude handwired_skellyyeume_vial.hex
 ```
 
-once successfully compiled you should see a message like the following and find the file that was generated at the root of the qmk_firmware folder:
+<br>
+If you're building your firmware, expand below:
+<collapse><details>
+If you want to compile the qmk default keymapping, run 
+```qmk compile -kb handwired/skellyyeume -km default```
+
+<br>
+
+If you want to compile the vial keymapping, you'll have to clone the [vial-qmk repo](https://github.com/vial-kb/vial-qmk.git) on to your machine, and copy the `skellyyeume` folder inside  the firmware folder of this project into your vial-qmk folder's '/keyboards/handwired' directory.
+then run
+```
+make handwired/skellyyeume:vial
+```
+
+<br>
+
+
+once successfully compiled, you should see a message like the following and find the file that was generated at the root of the qmk_firmware folder:
 ![img](pictures/compile.png)
 
+If for any reason you need to flash the qmk default firmware... run
 
 ```
 qmk flash -bl avrdude handwired_skellyyeume_default.hex
 ```
+
+</details></collapse>
+
+<br> 
+
+otherwise continue...
+
+
 ![img](pictures/flash1.png) <br>
 You'll first be prompted to put the microcontroller in DFU/bootloarder mode to flash the firmware. You can achieve this by briefly touching the RST & GND Pin on the microcontroller with some tweezers. Please see the [pinout](pictures/pinout.jpg). It only takes a gentle tap on the pins and you'll see a very tiny red led light up for half of a second when you short these pins. Wait for 5~10 seconds and then biggerf red LEDs will flash and you'll see more console lines printed on QMK MSYS console like below. <br>
 ![img](pictures/flash2.png)
-
-The above command simply translates to...<details>
-<collapse> </collapse>
-```
-change directory to qmk_firmware
-compile the firmware using the default keymap.c from the /keymaps/default folder
-flash the firmware file generated
-```
-</details> 
+ 
 
 <h1 style="color: red; font-weight: bold"> Repeat the process for a second microcontroller, which will be used for the other half of the keyboard. </h1>
 
